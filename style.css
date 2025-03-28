@@ -1,0 +1,206 @@
+:root {
+  --green-500: hsl(158, 36%, 37%);
+  --green-700: hsl(158, 42%, 18%);
+  --black: hsl(212, 21%, 14%);
+  --grey: hsl(228, 12%, 48%);
+  --cream: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+  --spacing-500: 4rem;
+  --spacing-400: 3.2rem;
+  --spacing-300: 2.4rem;
+  --spacing-200: 1.6rem;
+  --spacing-100: 0.8rem;
+  --spacing-50: 0.4rem;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html {
+  font-size: 62.5%; /* 1REM =10px */
+}
+
+body {
+  background-color: var(--cream);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.product__card {
+  background-color: var(--white);
+  border-radius: 0.8rem;
+  width: 35rem;
+  max-width: 35rem;
+  margin: 0 auto;
+}
+
+.product__card-image picture img {
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+
+.product__card-content {
+  padding: var(--spacing-400);
+  box-sizing: border-box;
+}
+
+.product__card-type {
+  font-family: "Montserrat", sans-serif;
+  /* font-weight: 500; */
+  font-size: 1.2rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+
+.product__card h1 {
+  font-family: "Fraunces", serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 100%;
+  margin-block: var(--spacing-300);
+  color: var(--black);
+}
+
+.product__card-description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: var(--grey);
+  line-height: 160%;
+}
+
+.product__card-sales {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6rem;
+  margin-block: var(--spacing-300);
+}
+
+.product__card-sales :nth-child(1) {
+  font-family: "Fraunces", serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--green-500);
+}
+
+.product__card-sales :nth-child(2) {
+  font-family: "Montserrat", sans-serif;
+  color: var(--grey);
+  text-decoration: line-through;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.product__card-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--green-500);
+  color: var(--white);
+  width: 100%;
+  padding-block: var(--spacing-200);
+  border-radius: 0.8rem;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.product__card-button:hover {
+  background-color: var(--green-700);
+  transition: 1s;
+}
+
+@media (min-width: 768px) {
+  .product__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60rem;
+    max-width: 60rem;
+    height: 45.6rem;
+  }
+
+  .product__card-image picture img {
+    object-fit: cover;
+    max-width: 100%;
+    height: 45.6rem;
+    border-radius: 0.8rem 0 0 0.8rem;
+  }
+}
